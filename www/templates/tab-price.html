@@ -1,0 +1,30 @@
+<ion-view view-title="Price">
+  <ion-content class="padding" ng-controller="PriceCtrl">
+    <div class="title-container">
+      <h3 class=title>Well Price</h3>
+      <p class=subtitle>Financial Calculator</p>
+    </div>
+    
+    <div class="calculation-types-container">
+      <button class="button button-block button-calm" ng-click="show()">
+        {{calculationType}}
+      </button>
+    </div>
+
+    <div class="result-container" ng-show="result.show">
+      <p class="title">{{result.title}}</p>  
+      <h3 class="result">{{result.value}}</h3>
+    </div>
+
+    <div class="list">    
+      <label class="item item-input item-stacked-label" ng-show="field.show" ng-repeat="field in fields">
+        <span class="input-label">{{field.label}}</span>
+        <input type="number" placeholder="{{field.label}}" ng-model="field.value">
+      </label>      
+
+      <button class="button button-block button-balanced" ng-click="calculation()">
+        CALCULAR
+      </button>
+    </div>
+  </ion-content>
+</ion-view>
